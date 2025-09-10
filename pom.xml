@@ -86,7 +86,7 @@
             			<image>c2kalita85/ecom-${project.artifactId}:v1.0</image>
             			<auth>
         					<username>c2kalita85</username>
-        					<password>dockerhub token</password>
+        					<password>***dockerhub token***</password>
       					</auth>
         			</to>
         		</configuration>	
