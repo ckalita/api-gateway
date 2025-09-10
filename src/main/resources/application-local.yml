@@ -1,34 +1,31 @@
+server:
+  port: 8989
+
+
 spring:
   application:
     name: gateway-service
   config:
-    import: optional:configserver:http://config-server:9196
+    import: optional:configserver:http://localhost:9196
   cloud:
     gateway:
       mvc:
         routes:
           - id: order-service
-            #uri: http://order-service:9179/
-            uri: lb://ORDER-SERVICE #eureka base route
+            uri: http://localhost:9179/
             predicates:
               - Path=/order/**
           - id: payment-service
-            #uri: http://payment-service:9180/
-            uri: lb://PAYMENT-SERVICE #eureka base route
+            uri: http://localhost:9180/
             predicates:
               - Path=/payment/**
 
-server:
-  port: 8989
-
-
 logging:
   pattern:
-    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"             
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
   file:
     name: /Users/dhunc2_mac/eclipse-workspaceNew/observability/log/api-gateway.log
-
-
+              
 management:
   tracing:
     sampling:
@@ -39,4 +36,5 @@ management:
         include: health,info,prometheus,metrics
   endpoint:
     prometheus:
-      enabled: true 
+      enabled: true	
+

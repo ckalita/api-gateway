@@ -1,0 +1,68 @@
+
+# === Eclipse ===
+*.classpath
+*.project
+*.settings/
+.metadata/
+.localhistory/
+recovery/
+
+# === Java ===
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
+
+# === Maven ===
+target/
+log/
+logs/
+**/target/
+
+# === Gradle ===
+.gradle/
+build/
+**/build/
+
+# === IntelliJ (if ever used) ===
+.idea/
+*.iml
+*.iws
+out/
+
+# === VS Code (optional) ===
+.vscode/
+
+# === OS files ===
+.DS_Store
+Thumbs.db
+
+# === Log Files ===
+*.log
+
+# === Environment & config files ===
+.env
+.env.*
+.mvn/* 
+
+# === Docker ===
+*.pid
+*.seed
+docker-compose.override.yml
+docker-compose.override.*.yml
+
+# Optional: Ignore built Docker images or volumes (if committed)
+docker-data/
+volumes/
+*.tar
+
+# === Others ===
+node_modules/
+tmp/
+*.swp
+*.bak
+
+# === Spring Boot Devtools ===
+.spring-boot-devtools.properties
+.spring-boot-devtools.restart.trigger-file

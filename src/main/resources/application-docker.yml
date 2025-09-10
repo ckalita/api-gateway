@@ -1,0 +1,27 @@
+server:
+  port: 8989
+
+
+spring:
+  application:
+    name: GATEWAY-SERVICE
+  config:
+    import: configserver:http://config:9196
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: order-service
+            uri: http://order:9179/
+            predicates:
+              - Path=/order/**
+          - id: payment-service
+            uri: http://payment:9180/
+            predicates:
+              - Path=/payment/**
+              
+              
+management:
+  tracing:
+    sampling:
+      probability: 1.0
